@@ -1,0 +1,57 @@
+/* =====================================================================
+   Area riservata - adattamento per PC e tablet orizzontale.
+   Sotto i 900px di larghezza non cambia nulla: resta la grafica da smartphone.
+   ===================================================================== */
+@media (min-width: 900px) {
+  /* Contenitore piu' largo */
+  .app { max-width: 1120px; padding: 0 32px 120px; }
+  header.top { padding-top: 18px; padding-bottom: 6px; }
+  .brand { font-size: 26px; }
+  header.top { justify-content: flex-start; gap: 8px; }
+  header.top .role { margin-left: auto; }
+  h1 { font-size: 44px; }
+
+  /* Eventi su piu' colonne (elenco eventi, agenda, gestione) */
+  #view div:has(> .ev + .ev), #view div:has(> [data-evdate]) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+    gap: 2px 16px;
+    align-items: start;
+  }
+  #view div:has(> .ev + .ev) > :not(.ev),
+  #view div:has(> [data-evdate]) > :not([data-evdate]):not(.ev) { grid-column: 1 / -1; }
+
+  /* Calendario mensile: dimensione contenuta */
+  .mgrid { max-width: 620px; }
+
+  /* Elenchi soci e classifica su due colonne */
+  #view div:has(> .soc + .soc) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 32px;
+  }
+  #view div:has(> .soc + .soc) > :not(.soc) { grid-column: 1 / -1; }
+
+  /* Schede di dettaglio (evento, socio, modifica) piu' ampie */
+  .sheet .inner { max-width: 900px; padding: 0 32px; }
+
+  /* Moduli: larghezza leggibile */
+  #view form, #view fieldset, .sheet form, .sheet fieldset { max-width: 860px; }
+
+  /* Barra delle sezioni: voci affiancate con icona e testo */
+  nav.tabs .in { max-width: 1120px; justify-content: center; gap: 6px; padding: 0 32px; }
+  nav.tabs button {
+    flex: 0 0 auto;
+    flex-direction: row;
+    gap: 8px;
+    padding: 14px 22px;
+    font-size: 18px;
+    border-radius: 0;
+  }
+  nav.tabs button[aria-current="page"] { box-shadow: inset 0 3px 0 var(--amber); }
+  nav.tabs button.todo::after { top: 12px; left: auto; right: 10px; }
+}
+
+@media (min-width: 1280px) {
+  #view div:has(> .ev + .ev), #view div:has(> [data-evdate]) { grid-template-columns: repeat(3, 1fr); }
+}

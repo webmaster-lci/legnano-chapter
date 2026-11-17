@@ -227,18 +227,25 @@
 
   function logoutButton() {
     const top = document.querySelector("header.top");
-    if (!top || document.getElementById("lcOut")) return;
-    const css = "margin-left:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:99px;padding:5px 12px;font:600 14px var(--cond);cursor:pointer;text-decoration:none;white-space:nowrap";
+    if (!top || document.getElementById("lcNav")) return;
+    const css = "border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:99px;padding:4px 10px;font:600 14px var(--cond);cursor:pointer;text-decoration:none;white-space:nowrap";
+    const nav = document.createElement("span");
+    nav.id = "lcNav";
+    nav.style.cssText = "display:flex;gap:6px;flex:none;margin-left:8px";
     // Torna al sito: resta collegato
     const s = document.createElement("a");
     s.id = "lcSite"; s.href = "../"; s.textContent = "‹ Sito"; s.title = "Torna al sito (resti collegato)";
-    s.style.cssText = css + ";margin-left:8px";
+    s.style.cssText = css;
     // Esci: chiude la sessione e torna alla schermata di accesso
     const b = document.createElement("button");
     b.id = "lcOut"; b.type = "button"; b.textContent = "Esci"; b.title = "Esci dall'area riservata";
     b.style.cssText = css;
     b.onclick = async () => { await SB.auth.signOut(); location.reload(); };
-    top.appendChild(s); top.appendChild(b);
+    nav.appendChild(s); nav.appendChild(b); top.appendChild(nav);
+    // Intestazione su una riga anche sui telefoni stretti
+    const st = document.createElement("style");
+    st.textContent = "header.top{flex-wrap:nowrap!important;gap:6px}header.top .brand{min-width:0;flex:1 1 auto}header.top .brand small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}header.top .role{flex:none}@media (max-width:400px){header.top .brand{font-size:19px}}";
+    document.head.appendChild(st);
   }
 
   SB.auth.getSession().then(({ data }) => {
