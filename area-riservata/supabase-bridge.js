@@ -231,7 +231,7 @@
     const b = document.createElement("button");
     b.id = "lcOut"; b.type = "button"; b.textContent = "Esci";
     b.style.cssText = "margin-left:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:99px;padding:5px 12px;font:600 14px var(--cond);cursor:pointer";
-    b.onclick = async () => { await SB.auth.signOut(); location.reload(); };
+    b.onclick = async () => { await SB.auth.signOut(); location.href = "../"; };
     top.appendChild(b);
   }
 
