@@ -13,6 +13,7 @@ Le tappe principali sono numerate (v0.1, v0.2…) e collegate al loro commit.
 | 18/11/2026 00:10 | v0.4 | `d3e9832` | Pulsanti separati "‹ Sito" (resti collegato) ed "Esci" |
 | 18/11/2026 00:14 | v0.5 | `fae9dbc` | Layout largo per PC e tablet; telefono invariato; intestazione su una riga |
 | 18/11/2026 00:20 | v0.6 | `d77e585` | Layout largo solo su PC/tablet: gli smartphone in orizzontale restano in formato telefono |
+| 18/11/2026 00:30 | v0.7 | `5977e6d` | Sito su smartphone: menu ☰ in colonna, pulsante Area riservata sempre visibile in alto |
 
 ## Come tornare indietro
 
