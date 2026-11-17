@@ -228,11 +228,17 @@
   function logoutButton() {
     const top = document.querySelector("header.top");
     if (!top || document.getElementById("lcOut")) return;
+    const css = "margin-left:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:99px;padding:5px 12px;font:600 14px var(--cond);cursor:pointer;text-decoration:none;white-space:nowrap";
+    // Torna al sito: resta collegato
+    const s = document.createElement("a");
+    s.id = "lcSite"; s.href = "../"; s.textContent = "‹ Sito"; s.title = "Torna al sito (resti collegato)";
+    s.style.cssText = css + ";margin-left:8px";
+    // Esci: chiude la sessione e torna alla schermata di accesso
     const b = document.createElement("button");
-    b.id = "lcOut"; b.type = "button"; b.textContent = "Esci";
-    b.style.cssText = "margin-left:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:99px;padding:5px 12px;font:600 14px var(--cond);cursor:pointer";
-    b.onclick = async () => { await SB.auth.signOut(); location.href = "../"; };
-    top.appendChild(b);
+    b.id = "lcOut"; b.type = "button"; b.textContent = "Esci"; b.title = "Esci dall'area riservata";
+    b.style.cssText = css;
+    b.onclick = async () => { await SB.auth.signOut(); location.reload(); };
+    top.appendChild(s); top.appendChild(b);
   }
 
   SB.auth.getSession().then(({ data }) => {
