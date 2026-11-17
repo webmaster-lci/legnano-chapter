@@ -1,7 +1,7 @@
 # Cronologia modifiche – Legnano Chapter
 
 Ogni modifica è salvata come commit su GitHub: si può tornare a qualsiasi versione precedente.
-Le tappe principali hanno anche un'etichetta (tag) per ritrovarle al volo.
+Le tappe principali sono numerate (v0.1, v0.2…) e collegate al loro commit.
 
 | Data | Versione | Commit | Modifica |
 |---|---|---|---|
@@ -18,7 +18,7 @@ Le tappe principali hanno anche un'etichetta (tag) per ritrovarle al volo.
 Basta chiederlo in chat indicando la versione (es. "torna alla v0.4"): viene creato un nuovo commit
 che ripristina quello stato, senza cancellare la cronologia.
 
-Da GitHub: scheda **Code ▸ Commits** per vedere ogni versione; **Tags** per le tappe principali.
+Da GitHub: scheda **Code ▸ Commits** per vedere ogni versione, con il codice del commit indicato qui sopra.
 
 ## Nota sul database (Supabase)
 
