@@ -273,7 +273,7 @@ footer.site a{color:var(--muted)}
       <li><a href="#iscriviti">Iscrizione</a></li>
       <li><a href="#contatti">Contatti</a></li>
     </ul>
-    <a class="btn pri" href="https://claude.ai/artifact/PvKwyCN63y4xi6xi92rkhM" target="_top">Area riservata</a>
+    <a class="btn pri" href="area-riservata/">Area riservata</a>
 
     <button class="burger" id="burger" aria-expanded="false" aria-controls="mobile" aria-label="Apri il menu">
       <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -293,7 +293,7 @@ footer.site a{color:var(--muted)}
       <a class="lnk" href="#news">News e avvisi</a>
       <a class="lnk" href="#iscriviti">Iscrizione</a>
       <a class="lnk" href="#contatti">Contatti</a>
-      <a class="btn pri" href="https://claude.ai/artifact/PvKwyCN63y4xi6xi92rkhM" target="_top">Area riservata</a>
+      <a class="btn pri" href="area-riservata/">Area riservata</a>
     </div>
   </nav>
 </header>
@@ -368,7 +368,7 @@ footer.site a{color:var(--muted)}
         <h2>Sei già socio?</h2>
         <p>Entra nell'area riservata per rinnovare, iscriverti ai run, registrare i tuoi km e aggiornare i tuoi dati.</p>
       </div>
-      <a class="btn pri" href="https://claude.ai/artifact/PvKwyCN63y4xi6xi92rkhM" target="_top">Accedi all'area riservata</a>
+      <a class="btn pri" href="area-riservata/">Accedi all'area riservata</a>
     </div>
   </section>
 
@@ -471,7 +471,7 @@ function renderEventi(){
         <h3>${e.titolo}</h3>
         <div class="meta">${e.luogo}${e.km?`, ${e.km} km`:""}</div>
         <div class="tags"><span class="tag">${e.tipo}</span>${e.aperta?'<span class="tag ok">Aperto a tutti</span>':'<span class="tag amb">Solo soci</span>'}</div>
-        <a class="act" href="https://claude.ai/artifact/PvKwyCN63y4xi6xi92rkhM" target="_top">Iscriviti dall'area riservata</a>
+        <a class="act" href="area-riservata/">Iscriviti dall'area riservata</a>
       </div>
     </article>`;
   }).join("") : `<div class="empty">Nessun evento di questo tipo in calendario.</div>`;
