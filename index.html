@@ -202,10 +202,15 @@ footer.site a{color:var(--muted)}
   .evgrid,.docs{grid-template-columns:1fr}
   section.blk{padding:36px 0}
   .blk-head h2{font-size:34px}
-  .menu,header.site .btn.pri{display:none}
-  .burger{display:grid}
+  .menu{display:none}
+  header.site>.wrap>.btn.pri{display:inline-flex;margin-left:auto;padding:8px 12px;font-size:16px}
+  .burger{display:grid;margin-left:8px}
+  header.site .brand{font-size:21px;min-width:0;white-space:nowrap}
+  header.site .brand small{overflow:hidden;text-overflow:ellipsis}
+  header.site>.wrap>.btn.pri{white-space:nowrap;flex:none}
+  .burger{flex:none}
   .mobile:not([hidden]){display:block;border-top:1px solid var(--line);background:var(--bg);max-height:calc(100vh - 64px);overflow-y:auto}
-  .mobile .wrap{display:block;padding-top:8px;padding-bottom:16px}
+  header.site .mobile .wrap{display:block;min-height:0;padding-top:8px;padding-bottom:16px}
   .mobile details{border-bottom:1px solid var(--line)}
   .mobile summary,.mobile>.wrap>a.lnk{display:flex;justify-content:space-between;align-items:center;padding:14px 4px;font:600 21px var(--cond);color:var(--ink);text-decoration:none;cursor:pointer;list-style:none;border-bottom:1px solid var(--line)}
   .mobile details summary{border-bottom:0}
