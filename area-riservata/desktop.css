@@ -1,8 +1,8 @@
 /* =====================================================================
    Area riservata - adattamento per PC e tablet orizzontale.
-   Sotto i 900px di larghezza non cambia nulla: resta la grafica da smartphone.
+   Sotto i 900px di larghezza o i 600px di altezza (telefoni, anche in orizzontale) resta la grafica da smartphone.
    ===================================================================== */
-@media (min-width: 900px) {
+@media (min-width: 900px) and (min-height: 600px) {
   /* Contenitore piu' largo */
   .app { max-width: 1120px; padding: 0 32px 120px; }
   header.top { padding-top: 18px; padding-bottom: 6px; }
@@ -52,6 +52,6 @@
   nav.tabs button.todo::after { top: 12px; left: auto; right: 10px; }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1280px) and (min-height: 600px) {
   #view div:has(> .ev + .ev), #view div:has(> [data-evdate]) { grid-template-columns: repeat(3, 1fr); }
 }
